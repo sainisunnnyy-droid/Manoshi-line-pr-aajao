@@ -19,7 +19,7 @@ jobs:
   terraform-check:
     name: Terraform Format, Validate, Scan & Plan
     if: github.ref != 'refs/heads/main'
-    runs-on: Ubuntu-latest
+    runs-on: self-hosted
 
     steps:
 
@@ -62,7 +62,7 @@ jobs:
   terraform-apply:
     name: Terraform Apply
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: Ubuntu-latest
+    runs-on: self-hosted
 
     steps:
 
